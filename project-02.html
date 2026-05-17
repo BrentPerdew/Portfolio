@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Thermal Protection Systems Computing Project | Brent Perdew</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script>
+  (function(){
+    document.documentElement.setAttribute('data-theme', 'ink');
+    document.documentElement.setAttribute('data-fontpair', 'space');
+  })();
+</script>
+</head>
+<body>
+<nav class="nav">
+<div class="container nav-inner">
+<a class="mark" href="index.html">
+<span class="glyph"></span>
+<span class="name">BRENT PERDEW</span>
+<span class="role">/ AE-ENG-001</span>
+</a>
+<div class="nav-links">
+<a href="index.html#about"><span class="num">01</span>About</a>
+<a href="index.html#projects"><span class="num">02</span>Projects</a>
+<a href="index.html#experience"><span class="num">03</span>Experience</a>
+<a href="index.html#skills"><span class="num">04</span>Skills</a>
+<a href="index.html#contact"><span class="num">05</span>Contact</a>
+</div>
+<a class="nav-cta" href="Resume.pdf">Resume</a>
+</div>
+</nav>
+<section class="cs-hero">
+<div class="container">
+<a class="cs-back" href="index.html#projects"><span class="arr">←</span> BACK TO PROJECTS</a>
+<p class="mono" style="margin-bottom:24px">
+<span class="acc">PROJECT 04 / 06</span> · AEROTHERMODYNAMICS · 2025
+    </p>
+<h1>Thermal Protection Systems Computing Project<span class="acc">.</span></h1>
+<p class="lede">Aerodynamic heating and TPS sizing analysis for a hypersonic projectile, using trajectory data, shock relations, engineering heating correlations, and finite-difference material response modeling.</p>
+<div class="cs-specs">
+<div class="cell">
+<div class="k">Role</div>
+<div class="v">Sole author. Built the analysis workflow for stagnation heating, midbody aerodynamic heating, heat-load integration, and TPS thickness sizing for Carbon-Carbon and PICA-like material systems.</div>
+</div>
+<div class="cell">
+<div class="k">Timeline</div>
+<div class="v">Fall 2025</div>
+</div>
+<div class="cell">
+<div class="k">Stack</div>
+<div class="v">MATLAB · Aerothermodynamics · Shock Relations · Fay-Riddell · Sutton-Graves · Finite Difference Thermal Modeling</div>
+</div>
+<div class="cell">
+<div class="k">Focus</div>
+<div class="v">Aerothermodynamics / TPS Sizing</div>
+</div>
+</div>
+<div class="project-links">
+<a class="btn ghost" href="assets/tps-sizing-report.pdf" rel="noopener" target="_blank">
+        Read TPS Sizing Report <span class="arr">↗</span>
+</a>
+</div>
+<div class="cs-hero-img image-mode">
+<img alt="Thermal protection system sizing heat flux or hypersonic vehicle analysis" src="assets/tps-sizing-hero.jpg"/>
+<span class="fig">FIG. A</span>
+<span class="caption">Hypersonic entry heating environment</span>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="cs-body">
+<aside class="cs-sidenav">
+<h6>Contents</h6>
+<ul>
+<li><a href="#brief"><span class="num">01</span>Brief</a></li>
+<li><a href="#problem"><span class="num">02</span>Problem</a></li>
+<li><a href="#approach"><span class="num">03</span>Approach</a></li>
+<li><a href="#outputs"><span class="num">04</span>Outputs</a></li>
+<li><a href="#takeaways"><span class="num">05</span>Takeaways</a></li>
+</ul>
+</aside>
+<article>
+<section class="cs-section" id="brief">
+<h2>01 · Brief</h2>
+<h3>Estimating hypersonic heating and sizing thermal protection from trajectory data.</h3><p>This project evaluated the thermal environment of a hypersonic projectile by computing stagnation point heating, aerodynamic heating at selected body locations, total heat load, and thermal protection system sizing requirements.</p><p>The analysis combined atmospheric properties, normal and oblique shock relations, Fay-Riddell and Sutton-Graves heating estimates, reference-temperature methods, and finite-difference thermal modeling to compare Carbon-Carbon and PICA-like TPS concepts.</p>
+
+
+<figure class="cs-figure">
+<div class="img image-mode">
+<img alt="Truncated elliptic cone vehicle geometry used for TPS analysis" src="assets/tps-sizing-vehicle.jpg"/>
+</div>
+<figcaption class="cap"><span class="label">FIG. B</span> Vehicle geometry used for the aerodynamic heating and TPS sizing calculations.</figcaption>
+</figure>
+</section>
+<section class="cs-section" id="problem">
+<h2>02 · Problem</h2>
+<h3>TPS sizing depends on peak heat flux, integrated heat load, ablation, and bondline limits.</h3><p>Designing a TPS is not just a matter of finding the maximum heat flux. The material has to survive the full thermal history, including the accumulated heat load, recession, conduction into the structure, and the allowable bondline temperature.</p><p>The project required turning a trajectory into engineering quantities that matter for design: heating rate, total heat load, required insulation thickness, recession depth, areal weight, and sensitivity to uncertainty margins.</p>
+
+
+<div class="cs-callout">
+<div class="k">Core Engineering Challenge</div>
+<p>The difficult tradeoff was balancing thermal protection, recession margin, bondline temperature limits, and areal weight across very different material behaviors.</p>
+</div>
+</section>
+<section class="cs-section" id="approach">
+<h2>03 · Approach</h2>
+<h3>Building an end-to-end aerothermal workflow from flight condition to TPS thickness.</h3>
+<ul class="cs-list"><li>Processed trajectory and atmospheric data to determine local flight conditions throughout the heating event.</li><li>Computed stagnation point heating using engineering heating correlations, including Fay-Riddell and Sutton-Graves style estimates.</li><li>Estimated aerodynamic heating at selected midbody locations using shock relations and reference-temperature methods.</li><li>Integrated heat flux over time to obtain total heat load for stagnation and surface heating cases.</li><li>Applied finite-difference thermal response modeling to size TPS thickness against a bondline temperature constraint.</li><li>Compared Carbon-Carbon and PICA-like material systems across thickness, recession, insulation need, and areal weight.</li></ul>
+<figure class="cs-figure">
+<div class="img image-mode">
+<img alt="Heat flux, integrated heat load, or TPS thickness sizing results" src="assets/tps-sizing-results.jpg"/>
+</div>
+<figcaption class="cap"><span class="label">FIG. C</span> Heating and TPS sizing results from the MATLAB analysis workflow, including heat flux, heat load, and thickness trends.</figcaption>
+</figure>
+</section>
+<section class="cs-section" id="outputs">
+<h2>04 · Outputs</h2>
+<h3>What the project produced.</h3>
+<ul class="cs-list"><li>A repeatable MATLAB workflow for stagnation point heating, surface aerodynamic heating, and TPS sizing.</li><li>Heat flux and heat load histories for the stagnation point and two reference body locations.</li><li>TPS sizing tables for Carbon-Carbon and PICA-like material systems.</li><li>A comparison of material tradeoffs showing that the PICA-like material was much thicker but less than half the areal weight of the Carbon-Carbon case.</li><li>Sensitivity insight showing that aerodynamic heating uncertainty had the strongest influence on final TPS sizing.</li><li>A final report connecting aerothermal theory, numerical implementation, and design interpretation.</li></ul>
+</section>
+<section class="cs-section" id="takeaways">
+<h2>05 · Takeaways</h2>
+<h3>What I took away from the project.</h3><p>This project helped me connect aerothermodynamic theory to actual design quantities. Heat flux plots are useful, but the design decision comes from understanding how heating, recession, conduction, mass, and material behavior interact.</p><p>It also reinforced the importance of traceable assumptions. TPS sizing changes quickly when heating margins, initial temperature, material properties, or bondline limits change, so the calculation has to make those assumptions clear.</p>
+
+
+</section>
+</article>
+</div>
+<div class="cs-nextprev">
+<a href="project-04.html">
+<span>← PREVIOUS</span>
+<span class="ttl">Orbit Determination and Analysis</span>
+</a>
+<a class="right" href="project-03.html">
+<span>NEXT →</span>
+<span class="ttl">Jet Engine Design</span>
+</a>
+</div>
+</div>
+<footer>
+<div class="container">
+<span>© 2026 <span class="acc">Brent Perdew</span> · Atlanta, GA</span>
+<span>Portfolio v2026.01</span>
+</div>
+</footer>
+</body>
+</html>

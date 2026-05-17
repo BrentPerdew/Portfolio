@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eddy Current Braking Controller | Brent Perdew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  (function(){
+    document.documentElement.setAttribute('data-theme', 'ink');
+    document.documentElement.setAttribute('data-fontpair', 'space');
+  })();
+</script>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="mark">
+      <span class="glyph"></span>
+      <span class="name">BRENT PERDEW</span>
+      <span class="role">/ AE-ENG-001</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html#about"><span class="num">01</span>About</a>
+      <a href="index.html#projects"><span class="num">02</span>Projects</a>
+      <a href="index.html#experience"><span class="num">03</span>Experience</a>
+      <a href="index.html#skills"><span class="num">04</span>Skills</a>
+      <a href="index.html#contact"><span class="num">05</span>Contact</a>
+    </div>
+
+    <a href="Resume.pdf" class="nav-cta">Resume</a>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <a href="index.html#projects" class="cs-back"><span class="arr">←</span> BACK TO PROJECTS</a>
+
+    <p class="mono" style="margin-bottom:24px">
+      <span class="acc">PROJECT 02 / 06</span> · DYNAMICS &amp; CONTROLS · 2026
+    </p>
+
+    <h1>Eddy Current Braking Controller<span class="acc">.</span></h1>
+
+    <p class="lede">
+      Physics-based modeling, system identification, Simulink simulation, and PI speed control for a DC motor-driven flywheel disturbed by an eddy current braking magnet.
+    </p>
+
+    <div class="cs-specs">
+      <div class="cell">
+        <div class="k">Role</div>
+        <div class="v">
+          Contributed to system dynamics modeling and simulation. Developed the system model, performed system identification, built Simulink simulations, supported controller design and tuning, and helped validate response plots against hardware behavior.
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="k">Timeline</div>
+        <div class="v">January 2026 - May 2026</div>
+      </div>
+
+      <div class="cell">
+        <div class="k">Stack</div>
+        <div class="v">
+          MATLAB · Simulink · System Identification · PI Control · Embedded Testing · Experimental Validation
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="k">Focus</div>
+        <div class="v">Dynamics &amp; Controls</div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="assets/eddy-current-poster.pdf" class="btn" target="_blank" rel="noopener">
+        View Poster <span class="arr">↗</span>
+      </a>
+      <a href="assets/eddy-current-final-report.pdf" class="btn ghost" target="_blank" rel="noopener">
+        Read Final Report <span class="arr">↗</span>
+      </a>
+    </div>
+
+    <div class="cs-hero-img image-mode">
+      <img src="assets/eddy-current-hero.jpg" alt="Eddy current braking system experimental setup or control response" />
+      <span class="fig">FIG. A</span>
+      <span class="caption">Eddy current braking system. Image Credits: Fouad A. Saad/shutterstock.com</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cs-body">
+
+    <aside class="cs-sidenav">
+      <h6>Contents</h6>
+      <ul>
+        <li><a href="#brief"><span class="num">01</span>Brief</a></li>
+        <li><a href="#problem"><span class="num">02</span>Problem</a></li>
+        <li><a href="#model"><span class="num">03</span>Model</a></li>
+        <li><a href="#control"><span class="num">04</span>Control</a></li>
+        <li><a href="#results"><span class="num">05</span>Results</a></li>
+        <li><a href="#takeaways"><span class="num">06</span>Takeaways</a></li>
+      </ul>
+    </aside>
+
+    <article>
+
+      <section class="cs-section" id="brief">
+        <h2>01 · Brief</h2>
+        <h3>Controlling flywheel speed with an electromagnetic braking disturbance.</h3>
+
+        <p>
+          This project studied speed regulation of a motor-driven flywheel subject to eddy current braking. The physical setup used a DC motor, aluminum flywheel, belt and pulley drivetrain, magnetic encoder feedback, and a permanent magnet that created a controllable braking disturbance.
+        </p>
+
+        <p>
+          The goal was to regulate wheel speed using a PI controller while comparing ideal simulation behavior against real hardware performance. The project tied together first-principles modeling, Simulink simulation, controller tuning, and experimental interpretation.
+        </p>
+
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/eddy-current-setup.jpg" alt="Physical eddy current braking experiment setup" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. B</span>
+            Experimental setup showing the motor, flywheel, encoder feedback, and eddy current braking mechanism.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="problem">
+        <h2>02 · Problem</h2>
+        <h3>The system behaved differently in simulation than it did in hardware.</h3>
+
+        <p>
+          In simulation, the flywheel can be approximated with a clean transfer function and tuned for a smooth response. In hardware, the response was affected by bearing friction, belt slip, pulley fit, motor limits, encoder noise, mechanical imbalance, and nonlinear braking behavior as magnet distance changed.
+        </p>
+
+        <p>
+          This made the project a practical controls problem rather than just a theoretical tuning exercise. The goal was not simply to tune gains for the best-looking simulation, but to choose a controller that could reject the magnetic braking disturbance while remaining stable and repeatable on physical hardware.
+        </p>
+      </section>
+
+      <section class="cs-section" id="model">
+        <h2>03 · Model</h2>
+        <h3>Building a physics-based representation of the flywheel dynamics.</h3>
+
+        <p>
+          I modeled the flywheel speed response by relating the motor input, rotational inertia, and braking torque to the angular velocity of the system. The simulation treated the eddy current brake as a disturbance acting against the wheel motion, which allowed the controller to be tested under changing braking conditions.
+        </p>
+
+        <ul class="cs-list">
+          <li>Developed a simplified dynamics model for the rotating flywheel system.</li>
+          <li>Performed system identification to estimate model behavior from experimental response data.</li>
+          <li>Represented the eddy current brake as a disturbance that opposed wheel motion and varied with magnet interaction.</li>
+          <li>Built Simulink simulations to compare open-loop response, closed-loop response, and gain sensitivity.</li>
+	  <li>Used simulation results to inform controller tuning before final hardware testing.</li>
+        </ul>
+
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/eddy-current-simulink.jpg" alt="Simulink model for eddy current braking controller" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. C</span>
+            Simulink model used to test the flywheel dynamics and PI control response before hardware implementation.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="control">
+        <h2>04 · Control</h2>
+        <h3>Using PI control to reduce steady-state error and stabilize the speed response.</h3>
+
+        <p>
+          The controller used proportional and integral feedback to regulate speed as the braking disturbance changed. The proportional term responded to speed error, while the integral term reduced steady-state error caused by the magnet-induced braking torque.
+        </p>
+
+        <p>
+          Simulation supported more aggressive integral action, but the hardware required more conservative tuning because the drivetrain and braking physics introduced losses and nonlinear behavior that were not fully captured in the simplified model.
+        </p>
+
+        <div class="cs-callout">
+          <div class="k">Controller Tuning Insight</div>
+          <p>
+            The most important controls lesson was that a gain that looks clean in Simulink can be too aggressive on hardware when the real plant includes belt slip, noise, actuator limits, and unmodeled losses.
+          </p>
+        </div>
+      </section>
+
+      <section class="cs-section" id="results">
+        <h2>05 · Results</h2>
+        <h3>What the project produced.</h3>
+
+        <ul class="cs-list">
+          <li>Created a working physics-based model of the eddy current braking system.</li>
+          <li>Simulink simulations comparing open-loop behavior, PI tuning choices, and disturbance rejection.</li>
+          <li>A PI controller that maintained flywheel speed under changing magnetic braking conditions.</li>
+          <li>Validated response plots comparing desired and measured flywheel speed during hardware tests.</li>
+          <li>Identification of practical hardware limits including belt slip, pulley fit, encoder noise, and unmodeled losses.</li>
+          <li>A final report and poster connecting modeling, simulation, controller design, hardware implementation, and experimental evaluation.</li>
+        </ul>
+
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/eddy-current-response.jpg" alt="Closed-loop speed response plot for eddy current braking controller" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. D</span>
+            Closed-loop response comparison used to evaluate PI controller tuning and disturbance rejection.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="takeaways">
+        <h2>06 · Takeaways</h2>
+        <h3>What I took away from the project.</h3>
+
+        <p>
+          This project strengthened my ability to move between modeling, simulation, and hardware validation. The model was valuable because it gave the team a starting point, but the real learning came from explaining why the hardware behaved differently.
+        </p>
+
+        <p>
+          It also reinforced that controls work is physical. A stable controller is not just a transfer function result. It has to account for sensors, actuators, drivetrain losses, noise, mechanical tolerances, and the limits of the real system.
+        </p>
+      </section>
+
+    </article>
+  </div>
+
+  <div class="cs-nextprev">
+    <a href="project-01.html">
+      <span>← PREVIOUS</span>
+      <span class="ttl">Autonomous On-Orbit Satellite Servicing Mission</span>
+    </a>
+
+    <a href="project-04.html" class="right">
+      <span>NEXT →</span>
+      <span class="ttl">Orbit Determination and Analysis</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <span>© 2026 <span class="acc">Brent Perdew</span> · Atlanta, GA</span>
+    <span>Portfolio v2026.01</span>
+  </div>
+</footer>
+
+</body>
+</html>

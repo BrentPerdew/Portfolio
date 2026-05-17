@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experimental Investigation of Bending and Tensile Strength of 3D Printed Specimens | Brent Perdew</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script>
+  (function(){
+    document.documentElement.setAttribute('data-theme', 'ink');
+    document.documentElement.setAttribute('data-fontpair', 'space');
+  })();
+</script>
+</head>
+<body>
+<nav class="nav">
+<div class="container nav-inner">
+<a class="mark" href="index.html">
+<span class="glyph"></span>
+<span class="name">BRENT PERDEW</span>
+<span class="role">/ AE-ENG-001</span>
+</a>
+<div class="nav-links">
+<a href="index.html#about"><span class="num">01</span>About</a>
+<a href="index.html#projects"><span class="num">02</span>Projects</a>
+<a href="index.html#experience"><span class="num">03</span>Experience</a>
+<a href="index.html#skills"><span class="num">04</span>Skills</a>
+<a href="index.html#contact"><span class="num">05</span>Contact</a>
+</div>
+<a class="nav-cta" href="Resume.pdf">Resume</a>
+</div>
+</nav>
+<section class="cs-hero">
+<div class="container">
+<a class="cs-back" href="index.html#projects"><span class="arr">←</span> BACK TO PROJECTS</a>
+<p class="mono" style="margin-bottom:24px">
+<span class="acc">PROJECT 06 / 06</span> · MATERIALS / STRUCTURES · 2025
+    </p>
+<h1>Experimental Investigation of Bending and Tensile Strength of 3D Printed Specimens with Varying Infill Geometries<span class="acc">.</span></h1>
+<p class="lede">Experimental mechanics study of how 10 percent grid, honeycomb, and triangular infill geometries affect bending and tensile performance of 3D printed PLA specimens.</p>
+<div class="cs-specs">
+<div class="cell">
+<div class="k">Role</div>
+<div class="v">Supported experimental planning, specimen comparison, DIC and MATLAB data interpretation, and analysis of bending and tensile performance across infill geometries.</div>
+</div>
+<div class="cell">
+<div class="k">Timeline</div>
+<div class="v">Fall 2025</div>
+</div>
+<div class="cell">
+<div class="k">Stack</div>
+<div class="v">Materials Testing · 3D Printing · Digital Image Correlation · MATLAB · Experimental Mechanics · Data Analysis</div>
+</div>
+<div class="cell">
+<div class="k">Focus</div>
+<div class="v">Materials / Structures / Additive Manufacturing</div>
+</div>
+</div>
+<div class="project-links">
+<a class="btn" href="assets/infill-geometry-final-report.pdf" rel="noopener" target="_blank">
+        Read Final Report <span class="arr">↗</span>
+</a>
+<a class="btn ghost" href="assets/infill-geometry-poster.pdf" rel="noopener" target="_blank">
+        View Poster <span class="arr">↗</span>
+</a>
+</div>
+<div class="cs-hero-img image-mode">
+<img alt="3D printed infill geometry specimens and mechanical testing results" src="assets/infill-geometry-hero.jpg"/>
+<span class="fig">FIG. A</span>
+<span class="caption">Dog-Bone and Beam Specimen testing setup</span>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="cs-body">
+<aside class="cs-sidenav">
+<h6>Contents</h6>
+<ul>
+<li><a href="#brief"><span class="num">01</span>Brief</a></li>
+<li><a href="#problem"><span class="num">02</span>Problem</a></li>
+<li><a href="#approach"><span class="num">03</span>Approach</a></li>
+<li><a href="#outputs"><span class="num">04</span>Outputs</a></li>
+<li><a href="#takeaways"><span class="num">05</span>Takeaways</a></li>
+</ul>
+</aside>
+<article>
+<section class="cs-section" id="brief">
+<h2>01 · Brief</h2>
+<h3>Testing how 3D printed infill geometry changes structural response.</h3><p>This project investigated how infill geometry affects the bending and tensile behavior of 3D printed PLA specimens. Grid, honeycomb, and triangular infill patterns were printed at 10 percent infill and compared under four-point bending and uniaxial tension.</p><p>The work used Digital Image Correlation to measure strain fields and MATLAB data reduction to estimate compressive and tensile elastic moduli, fracture behavior, and print-time tradeoffs.</p>
+
+
+<figure class="cs-figure">
+<div class="img image-mode">
+<img alt="3D printed tensile and bending specimens with different infill patterns" src="assets/infill-geometry-specimens.jpg"/>
+</div>
+<figcaption class="cap"><span class="label">FIG. B</span> Printed specimen set showing the infill geometries compared during tensile and bending tests.</figcaption>
+</figure>
+</section>
+<section class="cs-section" id="problem">
+<h2>02 · Problem</h2>
+<h3>Infill patterns create internal load paths that simple material assumptions miss.</h3><p>A 3D printed part is not a uniform solid. Its internal geometry controls how load moves through the part, how stiffness develops, where stress concentrates, and how failure begins.</p><p>That made experimental testing important. The same material and nominal infill density can behave differently depending on whether the pattern is grid, honeycomb, or triangular, especially when bending and tension stress the part in different ways.</p>
+
+
+<div class="cs-callout">
+<div class="k">Core Engineering Challenge</div>
+<p>The key question was not which pattern was strongest in general, but which geometry performed best for each loading mode and whether the result justified the added print time.</p>
+</div>
+</section>
+<section class="cs-section" id="approach">
+<h2>03 · Approach</h2>
+<h3>Using bending, tensile testing, DIC, and MATLAB reduction to compare patterns.</h3>
+<ul class="cs-list"><li>Printed PLA specimens with grid, honeycomb, and triangular infill geometries at consistent 10 percent infill settings.</li><li>Performed four-point bending tests and uniaxial tensile tests using a controlled load frame.</li><li>Used Digital Image Correlation to measure full-field strain over the specimen test sections.</li><li>Reduced DIC and load-cell data in MATLAB to calculate compressive and tensile elastic modulus values.</li><li>Compared fracture load, stiffness, failure location, and normalized manufacturing time across infill geometries.</li><li>Interpreted inconsistent fracture results by considering print defects, clamp-interface failure, and DIC quality limitations caused by speckle delamination.</li></ul>
+</section>
+<section class="cs-section" id="outputs">
+<h2>04 · Outputs</h2>
+<h3>What the project produced.</h3>
+<ul class="cs-list"><li>A comparative dataset for PLA specimens with grid, honeycomb, and triangular infill patterns.</li><li>Bending results showing honeycomb produced the highest compressive modulus, while grid produced the lowest stiffness values.</li><li>Tensile results showing triangular infill produced the highest tensile modulus in the tested specimens.</li><li>Print-time comparisons showing honeycomb generally required more manufacturing time than the other patterns.</li><li>Failure observations showing fracture loads varied significantly, especially near the transition between clamped and test regions.</li><li>A final report and poster summarizing experimental setup, DIC strain fields, MATLAB reduction, results, and limitations.</li></ul>
+</section>
+<section class="cs-section" id="takeaways">
+<h2>05 · Takeaways</h2>
+<h3>What I took away from the project.</h3><p>This project strengthened my ability to interpret experimental data rather than just report numbers. The stiffness trends were meaningful, but the fracture results showed how defects, boundary conditions, and failure location can dominate printed-part behavior.</p><p>It also gave me a better appreciation for additive manufacturing as a structural design problem. Infill geometry can reduce weight and tailor performance, but printed parts still need careful testing before they can be trusted in load-bearing applications.</p>
+
+
+</section>
+</article>
+</div>
+<div class="cs-nextprev">
+<a href="project-03.html">
+<span>← PREVIOUS</span>
+<span class="ttl">Jet Engine Design</span>
+</a>
+<a class="right" href="project-01.html">
+<span>NEXT →</span>
+<span class="ttl">Autonomous On-Orbit Satellite Servicing Mission</span>
+</a>
+</div>
+</div>
+<footer>
+<div class="container">
+<span>© 2026 <span class="acc">Brent Perdew</span> · Atlanta, GA</span>
+<span>Portfolio v2026.01</span>
+</div>
+</footer>
+</body>
+</html>

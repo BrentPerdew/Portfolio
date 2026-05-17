@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Autonomous On-Orbit Satellite Servicing Mission | Brent Perdew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  (function(){
+    document.documentElement.setAttribute('data-theme', 'ink');
+    document.documentElement.setAttribute('data-fontpair', 'space');
+  })();
+</script>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="mark">
+      <span class="glyph"></span>
+      <span class="name">BRENT PERDEW</span>
+      <span class="role">/ AE-ENG-001</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html#about"><span class="num">01</span>About</a>
+      <a href="index.html#projects"><span class="num">02</span>Projects</a>
+      <a href="index.html#experience"><span class="num">03</span>Experience</a>
+      <a href="index.html#skills"><span class="num">04</span>Skills</a>
+      <a href="index.html#contact"><span class="num">05</span>Contact</a>
+    </div>
+
+    <a href="Resume.pdf" class="nav-cta">Resume</a>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <a href="index.html#projects" class="cs-back"><span class="arr">←</span> BACK TO PROJECTS</a>
+
+    <p class="mono" style="margin-bottom:24px">
+      <span class="acc">PROJECT 01 / 06</span> · SPACE SYSTEMS · 2026
+    </p>
+
+    <h1>Autonomous On-Orbit Satellite Servicing Mission<span class="acc">.</span></h1>
+
+    <p class="lede">
+      System-level design of an autonomous spacecraft architecture for approaching, servicing, and refueling client satellites in geostationary orbit.
+    </p>
+
+    <div class="cs-specs">
+      <div class="cell">
+        <div class="k">Role</div>
+        <div class="v">
+          Project Systems Engineer Lead with contributions to requirements development, subsystem interfaces, operational modes, verification planning, and GNC concept definition.
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="k">Timeline</div>
+        <div class="v">January 2026 to May 2026</div>
+      </div>
+
+      <div class="cell">
+        <div class="k">Stack</div>
+        <div class="v">
+          MATLAB · Simulink · Systems Engineering · Mission Design · GNC Concepts · Requirements Flowdown
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="k">Focus</div>
+        <div class="v">Space Systems / On-Orbit Servicing</div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="assets/senior-design-presentation.pdf" class="btn" target="_blank" rel="noopener">
+        View Presentation <span class="arr">↗</span>
+      </a>
+
+      <a href="assets/senior-design-final-report.pdf" class="btn ghost" target="_blank" rel="noopener">
+        Read Final Report <span class="arr">↗</span>
+      </a>
+
+      <a href="assets/senior-design-poster.pdf" class="btn" target="_blank" rel="noopener">
+        View Poster <span class="arr">↗</span>
+      </a>
+    </div>
+
+    <div class="cs-hero-img image-mode">
+      <img src="assets/senior-design-hero.jpg" alt="Autonomous on-orbit satellite servicing mission architecture" />
+      <span class="fig">FIG. A</span>
+      <span class="caption">Mission architecture for GEO satellite servicing</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cs-body">
+
+    <aside class="cs-sidenav">
+      <h6>Contents</h6>
+      <ul>
+        <li><a href="#brief"><span class="num">01</span>Brief</a></li>
+        <li><a href="#problem"><span class="num">02</span>Problem</a></li>
+        <li><a href="#approach"><span class="num">03</span>Approach</a></li>
+        <li><a href="#systems-role"><span class="num">04</span>Systems Role</a></li>
+        <li><a href="#outputs"><span class="num">05</span>Outputs</a></li>
+        <li><a href="#takeaways"><span class="num">06</span>Takeaways</a></li>
+      </ul>
+    </aside>
+
+    <article>
+
+      <section class="cs-section" id="brief">
+        <h2>01 · Brief</h2>
+        <h3>Turning a GEO refueling mission into a traceable spacecraft architecture.</h3>
+
+        <p>
+          This senior design project developed BUCEES, an autonomous on-orbit servicing spacecraft concept for extending the life of GEO client satellites. The mission was framed around approaching a client spacecraft, performing proximity operations, establishing a servicing interface, and transferring propellant safely enough to make life extension economically useful.
+        </p>
+
+        <p>
+          The project went beyond a single subsystem design. It required connecting the business case, client selection, spacecraft architecture, subsystem sizing, operational modes, risk posture, interfaces, and verification logic into one coherent mission concept.
+        </p>
+
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/senior-design-conops.jpg" alt="Concept of operations for the satellite servicing mission" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. B</span>
+            Concept of operations showing the major mission phases from approach through servicing.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="problem">
+        <h2>02 · Problem</h2>
+        <h3>GEO servicing is a coupled mission, controls, interfaces, and economics problem.</h3>
+
+        <p>
+          A servicing spacecraft has to do more than reach GEO. It must safely operate near a high-value client satellite, control relative motion, manage plume and collision risk, align to a servicing interface, transfer propellant, and recover from off-nominal conditions without endangering the client vehicle.
+        </p>
+
+        <p>
+          That made the design a systems engineering problem. Sensing choices affected GNC behavior, GNC behavior affected docking and refueling operations, refueling requirements affected mass and propulsion sizing, and every subsystem had to support a clear mission timeline and set of operational modes.
+        </p>
+      </section>
+
+      <section class="cs-section" id="approach">
+        <h2>03 · Approach</h2>
+        <h3>Breaking the mission into traceable phases, functions, and requirements.</h3>
+
+        <ul class="cs-list">
+          <li>Defined mission phases for launch and transfer, GEO operations, rendezvous, proximity operations, servicing, eclipse, and contingency behavior.</li>
+          <li>Translated mission objectives into system-level requirements and lower-level subsystem considerations.</li>
+          <li>Supported interface definition across structures, refueling, GNC, communications, power, and operations.</li>
+          <li>Worked through operational mode logic to identify which subsystems were active, partially active, or inactive during each phase.</li>
+          <li>Connected GNC needs to relative navigation, sensor usage, attitude control, keep-out zones, and close approach behavior.</li>
+          <li>Used trade studies to compare design options and keep the final architecture tied to mission priorities.</li>
+        </ul>
+
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/senior-design-modes.jpg" alt="Operational modes table for the satellite servicing spacecraft" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. C</span>
+            Interface and data-flow diagram connecting spacecraft subsystems, power routing, command/telemetry, sensor data, and bus-level structural interfaces.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="systems-role">
+        <h2>04 · Systems Role</h2>
+        <h3>My main contribution was keeping the design connected across disciplines.</h3>
+
+        <p>
+          As Project Systems Engineer Lead, I focused on keeping the design traceable. I helped organize the mission around clear objectives, assumptions, requirements, constraints, interfaces, verification methods, and subsystem responsibilities.
+        </p>
+
+        <p>
+          I also supported the GNC side of the mission by helping define how rendezvous and proximity operations fit into the larger servicing sequence. That included thinking through relative navigation, sensing needs, approach geometry, attitude control, and how close-range operations constrained the rest of the spacecraft.
+        </p>
+
+        <div class="cs-callout">
+          <div class="k">Key Systems Engineering Emphasis</div>
+          <p>
+            The central challenge was making every design choice traceable back to the mission objective: safely extending the useful life of client satellites in GEO through autonomous refueling.
+          </p>
+        </div>
+      </section>
+
+      <section class="cs-section" id="outputs">
+        <h2>05 · Outputs</h2>
+        <h3>What the project produced.</h3>
+
+        <ul class="cs-list">
+          <li>A complete mission concept for an autonomous GEO servicing spacecraft.</li>
+          <li>A system architecture connecting mission operations, subsystem functions, and client satellite interactions.</li>
+          <li>Operational mode definitions for nominal, servicing, eclipse, and contingency scenarios.</li>
+          <li>Requirements flowdown and traceability artifacts connecting mission objectives to subsystem-level design decisions.</li>
+          <li>Trade study outputs supporting architecture, servicing, subsystem, and operational decisions.</li>
+          <li>A final technical report, poster, and presentation communicating the mission design and system-level rationale.</li>
+        </ul>
+
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/senior-design-model.jpg" alt="Physical or digital model of the satellite servicing spacecraft" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. D</span>
+            Final spacecraft model used to communicate the mission architecture and system design.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="takeaways">
+        <h2>06 · Takeaways</h2>
+        <h3>What I took away from the project.</h3>
+
+        <p>
+          This project strengthened my ability to think like a systems engineer. The biggest lesson was that a spacecraft concept only works when mission goals, requirements, interfaces, operational modes, verification plans, and subsystem assumptions all support one another.
+        </p>
+
+        <p>
+          It also reinforced how important clear communication is in aerospace design. A strong technical decision is only useful if the assumptions, constraints, and reasoning behind it are clear enough for the rest of the team to use.
+        </p>
+      </section>
+
+    </article>
+  </div>
+
+  <div class="cs-nextprev">
+    <a href="index.html#projects">
+      <span>← PREVIOUS</span>
+      <span class="ttl">All projects</span>
+    </a>
+
+    <a href="project-06.html" class="right">
+      <span>NEXT →</span>
+      <span class="ttl">Eddy Current Braking Controller</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <span>© 2026 <span class="acc">Brent Perdew</span> · Atlanta, GA</span>
+    <span>Portfolio v2026.01</span>
+  </div>
+</footer>
+
+</body>
+</html>

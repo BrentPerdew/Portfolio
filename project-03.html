@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Jet Engine Design | Brent Perdew</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script>
+  (function(){
+    document.documentElement.setAttribute('data-theme', 'ink');
+    document.documentElement.setAttribute('data-fontpair', 'space');
+  })();
+</script>
+</head>
+<body>
+<nav class="nav">
+<div class="container nav-inner">
+<a class="mark" href="index.html">
+<span class="glyph"></span>
+<span class="name">BRENT PERDEW</span>
+<span class="role">/ AE-ENG-001</span>
+</a>
+<div class="nav-links">
+<a href="index.html#about"><span class="num">01</span>About</a>
+<a href="index.html#projects"><span class="num">02</span>Projects</a>
+<a href="index.html#experience"><span class="num">03</span>Experience</a>
+<a href="index.html#skills"><span class="num">04</span>Skills</a>
+<a href="index.html#contact"><span class="num">05</span>Contact</a>
+</div>
+<a class="nav-cta" href="Resume.pdf">Resume</a>
+</div>
+</nav>
+<section class="cs-hero">
+<div class="container">
+<a class="cs-back" href="index.html#projects"><span class="arr">←</span> BACK TO PROJECTS</a>
+<p class="mono" style="margin-bottom:24px">
+<span class="acc">PROJECT 05 / 06</span> · PROPULSION · 2025
+    </p>
+<h1>Jet Engine Design<span class="acc">.</span></h1>
+<p class="lede">Cycle analysis and optimization of turbine engine configurations across takeoff, transonic cruise, and supersonic cruise conditions for a business jet mission.</p>
+<div class="cs-specs">
+<div class="cell">
+<div class="k">Role</div>
+<div class="v">Contributed to the propulsion cycle model, engine configuration trade study, performance calculations, and interpretation of thrust, TSFC, efficiency, and configuration selection across mission points.</div>
+</div>
+<div class="cell">
+<div class="k">Timeline</div>
+<div class="v">June to July 2025</div>
+</div>
+<div class="cell">
+<div class="k">Stack</div>
+<div class="v">MATLAB · Propulsion · Turbine Engine Cycle Analysis · Optimization · Thermodynamics</div>
+</div>
+<div class="cell">
+<div class="k">Focus</div>
+<div class="v">Propulsion / Engine Design</div>
+</div>
+</div>
+<div class="project-links">
+<a class="btn ghost" href="assets/jet-engine-design-report.pdf" rel="noopener" target="_blank">
+        Read Final Report <span class="arr">↗</span>
+</a>
+</div>
+<div class="cs-hero-img image-mode">
+<img alt="Jet engine design cycle analysis or engine station model" src="assets/jet-engine-design-hero.jpg"/>
+<span class="fig">FIG. A</span>
+<span class="caption">Jet engine model. Source: Jeff Dahl/CC BY-SA 4.0</span>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="cs-body">
+<aside class="cs-sidenav">
+<h6>Contents</h6>
+<ul>
+<li><a href="#brief"><span class="num">01</span>Brief</a></li>
+<li><a href="#problem"><span class="num">02</span>Problem</a></li>
+<li><a href="#approach"><span class="num">03</span>Approach</a></li>
+<li><a href="#outputs"><span class="num">04</span>Outputs</a></li>
+<li><a href="#takeaways"><span class="num">05</span>Takeaways</a></li>
+</ul>
+</aside>
+<article>
+<section class="cs-section" id="brief">
+<h2>01 · Brief</h2>
+<h3>Comparing engine architectures across a full flight envelope.</h3><p>This project developed and evaluated turbine engine designs for four flight conditions: maximum takeoff thrust, beginning transonic cruise, end transonic cruise, and supersonic cruise. The corresponding Mach numbers were 0.20, 0.95, 0.95, and 1.6.</p><p>The analysis compared ramjet, turbojet, and turbofan style configurations by calculating bypass ratio, fan and compressor pressure ratios, bleed ratio, fuel ratios, stagnation states, nozzle velocities, specific thrust, TSFC, and efficiency.</p>
+
+
+<figure class="cs-figure">
+<div class="img image-mode">
+<img alt="Jet engine station diagram showing inlet compressor combustor turbine and nozzle" src="assets/jet-engine-design-param.jpg"/>
+</div>
+<figcaption class="cap"><span class="label">FIG. B</span> Parameters and performance outputs used to compare engine configurations across the mission flight conditions.</figcaption>
+</figure>
+</section>
+<section class="cs-section" id="problem">
+<h2>02 · Problem</h2>
+<h3>The best engine configuration changes as the aircraft accelerates.</h3><p>A configuration that performs well at takeoff is not automatically the best choice for transonic or supersonic cruise. Bypass flow can help low-speed efficiency, but it becomes less useful as drag and high specific thrust requirements dominate the mission.</p><p>The project required matching required specific thrust at each flight condition, then judging which architecture was most useful for the overall mission rather than choosing the best point solution in isolation.</p>
+
+
+<div class="cs-callout">
+<div class="k">Core Engineering Challenge</div>
+<p>The final design had to balance thrust, fuel consumption, efficiency, and mission usefulness across the full operating envelope, not just at a single design point.</p>
+</div>
+</section>
+<section class="cs-section" id="approach">
+<h2>03 · Approach</h2>
+<h3>Sweeping cycle parameters to match thrust requirements and compare architectures.</h3>
+<ul class="cs-list"><li>Built a cycle-analysis workflow for inlet, fan, compressor, combustor, turbine, afterburner, and nozzle behavior.</li><li>Evaluated turbofan, turbojet, and ramjet suitability across takeoff, transonic, and supersonic flight conditions.</li><li>Varied design parameters including bypass ratio, fan pressure ratio, compressor pressure ratio, bleed ratio, fuel ratio, and afterburner fuel ratio.</li><li>Calculated stagnation temperatures and pressures at component exits, nozzle exit velocities, power balance, specific thrust, TSFC, and efficiency.</li><li>Optimized condition-specific designs against required specific thrust and maximum-thrust objectives.</li><li>Selected an overall architecture by considering where the aircraft spends most of the mission and which configuration performs best there.</li></ul>
+<figure class="cs-figure">
+<div class="img image-mode">
+<img alt="Jet engine performance results comparing thrust efficiency and design parameters" src="assets/jet-engine-design-model.jpg"/>
+</div>
+<figcaption class="cap"><span class="label">FIG. C</span> Engine station model used to connect inlet, compressor, combustor, turbine, afterburner, nozzle, fuel, and power-flow calculations.</figcaption>
+</figure>
+</section>
+<section class="cs-section" id="outputs">
+<h2>04 · Outputs</h2>
+<h3>What the project produced.</h3>
+<ul class="cs-list"><li>Condition-specific optimized engine configurations for takeoff, beginning transonic cruise, end transonic cruise, and supersonic cruise.</li><li>A comparison showing turbofan behavior was better for the first two lower-speed conditions, while turbojet behavior was better for the later transonic and supersonic conditions.</li><li>A conclusion that ramjet operation was not appropriate for the given Mach range.</li><li>Performance tables for specific thrust, TSFC, efficiencies, fuel ratios, bypass ratio, and component stagnation states.</li><li>A final recommendation favoring a turbojet as the best overall business jet engine architecture because most of the mission occurs at transonic and supersonic speeds.</li></ul>
+</section>
+<section class="cs-section" id="takeaways">
+<h2>05 · Takeaways</h2>
+<h3>What I took away from the project.</h3><p>This project made propulsion feel much more system-level. A pressure ratio, bypass ratio, or afterburner choice is not just a number in an equation. It changes fuel use, thrust, temperature limits, drag implications, and mission-level performance.</p><p>It also reinforced that optimization needs context. A point design can look strong at one condition, but the better engineering choice is the architecture that supports the overall mission profile.</p>
+
+
+</section>
+</article>
+</div>
+<div class="cs-nextprev">
+<a href="project-02.html">
+<span>← PREVIOUS</span>
+<span class="ttl">Thermal Protection Systems Computing Project</span>
+</a>
+<a class="right" href="project-05.html">
+<span>NEXT →</span>
+<span class="ttl">Experimental Investigation of Bending and Tensile Strength of 3D Printed Specimens</span>
+</a>
+</div>
+</div>
+<footer>
+<div class="container">
+<span>© 2026 <span class="acc">Brent Perdew</span> · Atlanta, GA</span>
+<span>Portfolio v2026.01</span>
+</div>
+</footer>
+</body>
+</html>

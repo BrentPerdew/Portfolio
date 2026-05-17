@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Orbit Determination and Analysis | Brent Perdew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  (function(){
+    document.documentElement.setAttribute('data-theme', 'ink');
+    document.documentElement.setAttribute('data-fontpair', 'space');
+  })();
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="mark">
+      <span class="glyph"></span>
+      <span class="name">BRENT PERDEW</span>
+      <span class="role">/ AE-ENG-001</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#about"><span class="num">01</span>About</a>
+      <a href="index.html#projects"><span class="num">02</span>Projects</a>
+      <a href="index.html#experience"><span class="num">03</span>Experience</a>
+      <a href="index.html#skills"><span class="num">04</span>Skills</a>
+      <a href="index.html#contact"><span class="num">05</span>Contact</a>
+    </div>
+    <a href="Resume.pdf" class="nav-cta">Resume</a>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <a href="index.html#projects" class="cs-back"><span class="arr">←</span> BACK TO PROJECTS</a>
+
+    <p class="mono" style="margin-bottom:24px">
+      <span class="acc">PROJECT 03 / 06</span> · ASTRODYNAMICS · 2026
+    </p>
+
+    <h1>Orbit Determination and Analysis<span class="acc">.</span></h1>
+
+    <p class="lede">
+      Space domain awareness and orbit analysis project using GMAT, MATLAB, and Python to model Earth orbits, validate propagation, design a GTO-to-GEO transfer, and study drag effects.
+    </p>
+
+    <div class="cs-specs">
+      <div class="cell">
+        <div class="k">Role</div>
+        <div class="v">Modeled representative Earth orbits, configured GMAT force models and ground stations, validated numerical propagation against GMAT, analyzed a GTO-to-GEO transfer, and studied long-duration drag-driven orbital decay.</div>
+      </div>
+      <div class="cell">
+        <div class="k">Timeline</div>
+        <div class="v">Spring 2026</div>
+      </div>
+      <div class="cell">
+        <div class="k">Stack</div>
+        <div class="v">GMAT · MATLAB · Python · Orbital Mechanics · State Propagation · Coordinate Frames · Perturbation Analysis</div>
+      </div>
+      <div class="cell">
+        <div class="k">Focus</div>
+        <div class="v">Astrodynamics</div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="assets/orbit-determination-report.pdf" class="btn ghost" target="_blank" rel="noopener">
+        Read Final Report <span class="arr">↗</span>
+      </a>
+    </div>
+
+    <div class="cs-hero-img image-mode">
+      <img src="assets/orbit-determination-hero.jpg" alt="Orbit determination trajectory visualization or GMAT orbit analysis output" />
+      <span class="fig">FIG. A</span>
+      <span class="caption">Orbit geometry, state propagation, and SDA analysis - Made in Python</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cs-body">
+    <aside class="cs-sidenav">
+      <h6>Contents</h6>
+      <ul>
+        <li><a href="#brief"><span class="num">01</span>Brief</a></li>
+        <li><a href="#problem"><span class="num">02</span>Problem</a></li>
+        <li><a href="#approach"><span class="num">03</span>Approach</a></li>
+        <li><a href="#outputs"><span class="num">04</span>Outputs</a></li>
+        <li><a href="#takeaways"><span class="num">05</span>Takeaways</a></li>
+      </ul>
+    </aside>
+
+    <article>
+
+      <section class="cs-section" id="brief">
+        <h2>01 · Brief</h2>
+        <h3>Modeling orbital motion from Keplerian elements through long-duration propagation.</h3>
+        <p>This project focused on space domain awareness through orbit characterization, numerical propagation, transfer design, and perturbation analysis. The work used representative LEO, sun-synchronous, MEO, GTO, and GEO cases to connect orbital elements to real mission behavior.</p>
+        <p>The project combined GMAT modeling, custom propagation, coordinate-frame reasoning, ground-track visualization, and analytical checks so the results were not just plotted, but physically interpreted.</p>
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/orbit-determination-ground-track.jpg" alt="Ground track or orbital visibility analysis for the orbit determination project" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. B</span>
+            Ground track output from the GMAT-based analysis.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="problem">
+        <h2>02 · Problem</h2>
+        <h3>Orbit determination is sensitive to measurement quality and model assumptions.</h3>
+        <p>Small differences in initial conditions, coordinate frames, force models, or propagation assumptions can create large differences in orbit results over time. That makes it important to know exactly what frame a state is expressed in and what physics the propagator includes.</p>
+        <p>The project required comparing analytical calculations, GMAT outputs, and custom numerical propagation so that trajectory behavior could be explained rather than accepted at face value.</p>
+        <div class="cs-callout">
+          <div class="k">Core Engineering Challenge</div>
+          <p>The central challenge was keeping the orbit definitions, coordinate frames, force models, and validation metrics consistent across GMAT, MATLAB, and Python workflows.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" id="approach">
+        <h2>03 · Approach</h2>
+        <h3>Combining GMAT mission products with custom numerical and analytical checks.</h3>
+        <ul class="cs-list">
+          <li>Defined representative Keplerian element sets for LEO communications, sun-synchronous Earth observation, and MEO navigation cases.</li>
+          <li>Configured ground stations and generated visibility timelines, 3D orbit views, ground tracks, and exported state vectors in GMAT.</li>
+          <li>Implemented a custom ODE-based two-body propagator and compared it against GMAT trajectory outputs.</li>
+          <li>Analyzed periapsis and apoapsis behavior, velocity magnitudes, and trajectory divergence between simplified and higher-fidelity models.</li>
+          <li>Designed and validated a GTO-to-GEO transfer, including a combined apogee burn and inclination reduction maneuver.</li>
+	  <li>Propagated a low Earth orbit with and without atmospheric drag to study semi-major axis evolution and long-duration orbital decay.</li>
+        </ul>
+
+
+      <section class="cs-section" id="outputs">
+        <h2>04 · Outputs</h2>
+        <h3>What the project produced.</h3>
+
+        <figure class="cs-figure">
+          <div class="img image-mode">
+            <img src="assets/orbit-determination-propagation.jpg" alt="Comparison of propagated orbit trajectories or state vector analysis" />
+          </div>
+          <figcaption class="cap">
+            <span class="label">FIG. C</span>
+            Plot showing the effects of perturbations on LEO spacecraft altitude over 30 days.
+          </figcaption>
+        </figure>
+      </section>
+
+        <ul class="cs-list">
+          <li>GMAT models and visual products for LEO, SSO, MEO, GTO, and GEO orbit cases.</li>
+          <li>Ground station visibility analysis and ground-track outputs over multi-day propagation windows.</li>
+          <li>A numerical propagation comparison showing how a simplified ODE model diverges from GMAT when force-model assumptions differ.</li>
+          <li>A GTO-to-GEO transfer analysis with an apogee maneuver of approximately 1.68 km/s, validated against GMAT targeting results.</li>
+	  <li>A perturbation study showing how atmospheric drag produces accumulated orbital decay over longer propagation durations</li>
+	  <li>A final report tying together orbital elements, frames, transfer design, perturbations, and mission interpretation.</li>
+        </ul>
+      </section>
+
+      <section class="cs-section" id="takeaways">
+        <h2>05 · Takeaways</h2>
+        <h3>What I took away from the project.</h3>
+        <p>This project built my confidence working with orbital mechanics as an analysis workflow instead of a set of isolated textbook problems. The most useful part was learning to explain why results changed when the model, frame, or perturbation environment changed.</p>
+        <p>It also reinforced how important validation is in astrodynamics. GMAT, MATLAB, Python, and analytical calculations are all useful, but they only become trustworthy when the assumptions line up and the differences can be explained.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <div class="cs-nextprev">
+    <a href="project-06.html">
+      <span>← PREVIOUS</span>
+      <span class="ttl">Eddy Current Braking Controller</span>
+    </a>
+    <a href="project-02.html" class="right">
+      <span>NEXT →</span>
+      <span class="ttl">Thermal Protection Systems Computing Project</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <span>© 2026 <span class="acc">Brent Perdew</span> · Atlanta, GA</span>
+    <span>Portfolio v2026.01</span>
+  </div>
+</footer>
+
+</body>
+</html>

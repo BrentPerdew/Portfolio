@@ -1128,3 +1128,126 @@ html[data-fontpair="editorial"] .cs-section h3 { font-weight: 400; }
     aspect-ratio: unset;
   }
 }
+
+/* ─────────────────────────────────────────────
+   MOBILE FIXES
+   Keeps desktop layout unchanged
+   ───────────────────────────────────────────── */
+
+@media (max-width: 800px) {
+
+  /* Prevent page from scrolling sideways */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Make nav fit on mobile */
+  .nav-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .mark {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .mark .role {
+    display: none;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    gap: 18px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .nav-cta {
+    flex: 0 0 auto;
+    padding: 7px 12px;
+  }
+
+  /* Project page layout should become single-column */
+  .cs-body {
+    display: block;
+  }
+
+  /* Move the directory into normal page flow */
+  .cs-sidenav {
+    position: static;
+    width: 100%;
+    margin: 0 0 32px;
+    padding: 16px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .cs-sidenav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cs-sidenav li {
+    margin: 0;
+  }
+
+  .cs-sidenav a {
+    white-space: nowrap;
+  }
+
+  /* Make project hero spacing tighter on mobile */
+  .cs-hero {
+    padding-top: 36px;
+  }
+
+  .cs-hero h1 {
+    font-size: clamp(38px, 12vw, 58px);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .cs-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .project-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-links .btn {
+    justify-content: center;
+  }
+
+  /* Make figures behave nicely on mobile */
+  .cs-hero-img,
+  .cs-figure,
+  .cs-figure .img {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .cs-hero-img img,
+  .cs-figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
